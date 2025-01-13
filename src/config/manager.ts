@@ -1,6 +1,5 @@
 import * as vscode from 'vscode';
 
-
 const COFIG_CATEGORY = 'vsboiler';
 
 const DEFAULT_VSBOILER_PATH_KEY = 'defaultVSBoilerPath';

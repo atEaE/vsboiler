@@ -15,8 +15,8 @@
     "commands": [
       {
         "category": "%command.category%",
-        "command": "vsboiler.helloWorld",
-        "title": "Hello World"
+        "command": "vsboiler.setup",
+        "title": "Setup"
       }
     ],
     "configuration": [
