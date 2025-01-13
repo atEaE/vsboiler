@@ -14,8 +14,21 @@
   "contributes": {
     "commands": [
       {
+        "category": "%command.category%",
         "command": "vsboiler.helloWorld",
         "title": "Hello World"
+      }
+    ],
+    "configuration": [
+      {
+        "title": "VSBoiler",
+        "properties": {
+          "vsboiler.defaultVSBoilerPath": {
+            "title": "%configuration.defaultVSBoilerPath.title%",
+            "type": "string",
+            "default": "~/.vscode/vsboiler"
+          }
+        }
       }
     ]
   },
