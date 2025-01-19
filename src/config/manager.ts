@@ -1,6 +1,4 @@
 import * as vscode from 'vscode';
-import * as fs from 'fs';
-import * as path from 'path';
 
 import { VSCodeAppError } from '../error';
 
@@ -26,14 +24,16 @@ export const validate = (): void => {
     if (!val) {
       throw new VSCodeAppError('error', 'Default path not set');
     }
+    
     if (val.trim().length === 0) {
       throw new VSCodeAppError('error', 'Default path not set');
     }
-    const resolved = path.resolve(val);
-    try {
-      fs.accessSync(resolved, fs.constants.F_OK);
-    } catch (err) {
-      throw new VSCodeAppError('error', 'Default path does not exist', err);
+    
+    const invalidChars =  /[<>:\"\|?*\x00]/;
+    if (invalidChars.test(val))  {
+      throw new VSCodeAppError('error', 'Default path contains invalid characters');
     }
   }
 };
+
+
