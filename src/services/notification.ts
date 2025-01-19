@@ -3,6 +3,11 @@ import * as vscode from 'vscode';
 import * as channel from '../channel';
 import { VSCodeAppError } from '../error';
 
+/**
+ * notificationWrapFunc wraps a function with error handling and notification windows
+ * @param fn function to wrap
+ * @returns wrapped function
+ */
 export const notificationWrapFunc = (fn: Function): (() => void) => {
   return () => {
     try {
