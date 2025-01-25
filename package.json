@@ -17,6 +17,11 @@
         "category": "%command.category%",
         "command": "vsboiler.setup",
         "title": "Setup"
+      },
+      {
+        "category": "%command.category%",
+        "command": "vsboiler.load",
+        "title": "Load"
       }
     ],
     "configuration": [

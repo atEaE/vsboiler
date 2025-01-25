@@ -10,6 +10,8 @@ const DEFAULT_VSBOILER_PATH_KEY = 'defaultVSBoilerPath';
  * @returns the default directory path for the boilerplate
  */
 export const getDefaultPath = (): string => {
+  const defpath = vscode.workspace.getConfiguration(COFIG_CATEGORY);
+  defpath.update(DEFAULT_VSBOILER_PATH_KEY, ''); // set the default path
   let val = vscode.workspace.getConfiguration(COFIG_CATEGORY).get<string>(DEFAULT_VSBOILER_PATH_KEY);
   return val ? val.trim() : '';
 };
